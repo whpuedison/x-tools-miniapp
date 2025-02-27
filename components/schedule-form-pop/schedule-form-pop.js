@@ -212,6 +212,11 @@ Component({
         const path = id ? '/miniapp/schedule/editSchedule' : '/miniapp/schedule/addSchedule'
         $post(path, payload)
           .then(() => {
+            wx.showToast({
+              title: `${id ? '编辑' : '添加'}成功`,
+              icon: 'success',
+              duration: 2000
+            })
             this.onClose()
             this.triggerEvent('refresh');
           })
