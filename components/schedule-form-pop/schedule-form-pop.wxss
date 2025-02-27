@@ -1,0 +1,27 @@
+/* 样式文件 */
+.form-container {
+    padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16rpx;
+} 
+.title-class {
+    flex: inherit;
+    max-width: 6.2em;
+    min-width: 6.2em;
+    margin-right: 12px;
+}
+.value-class {
+    text-align: left;
+    color: var(--field-input-text-color,#323233);
+}
+.save-btn {
+    margin-top: 12px;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+  

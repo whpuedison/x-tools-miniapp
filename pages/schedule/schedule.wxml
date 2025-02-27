@@ -1,0 +1,81 @@
+<wxs module="getImageUrl" src="../../wxs/getImageUrl.wxs" />
+
+<van-tabs color="#07c160">
+  <van-tab title="排课计划">
+    <schedule-list
+        loading="{{loading}}"
+        list="{{list}}"
+        locationList="{{locationList}}"
+        locationColor="{{locationColor}}"
+        courseTypeList="{{courseTypeList}}"
+        bind:refresh="onRefresh" 
+        showAddBtn="{{true}}"
+    />
+  </van-tab>
+  <van-tab title="历史排课">
+    <van-cell 
+        title="{{curDateDesc}}" 
+        is-link 
+        bind:click="onCurDatePickerOpen" 
+    >
+        <view class="total-salary" catchtap="onSalaryModalOpen">¥{{totalSalary}}</view>
+    </van-cell>
+    <schedule-list
+        loading="{{historyLoading}}"
+        list="{{historyList}}"
+        locationList="{{locationList}}"
+        locationColor="{{locationColor}}"
+        courseTypeList="{{courseTypeList}}"
+        bind:refresh="onRefresh" 
+    />
+  </van-tab>
+  <van-tab title="我的课表">
+    <van-cell 
+        title="{{customDate}}" 
+        is-link 
+        bind:click="onCustomDatePickerOpen" 
+    />
+    <schedule-week
+        loading="{{weekLoading}}"
+        list="{{weekList}}"
+        xAxisData="{{xAxisData}}"
+        locationList="{{locationList}}"
+        locationColor="{{locationColor}}"
+    />
+  </van-tab>
+</van-tabs>
+
+<van-popup show="{{ showCurDatePicker }}" position="bottom" bind:close="onCurDatePickerClose">
+    <van-datetime-picker
+        type="year-month"
+        value="{{ curDate }}"
+        maxDate="{{maxDate}}"
+        bind:cancel="onCurDatePickerClose"
+        bind:confirm="onChangeCurDate"
+    />
+</van-popup>
+
+<van-calendar
+  color="#07c160"
+  min-date="{{minDate}}"
+  show="{{ showCustomDatePicker }}"
+  type="range"
+  bind:close="onCustomDatePickerClose"
+  bind:confirm="onChangeCurDate"
+/>
+
+<van-dialog
+  use-slot
+  title="薪资明细"
+  confirm-button-color="#07c160"
+  show="{{ showSalaryModal }}"
+  bind:close="onClose"
+>
+    <view class="salary-list" wx:if="{{storeSalary.length}}">
+        <view wx:for="{{storeSalary}}" wx:key="index">
+            {{item.location}}：¥{{item.salary}}
+        </view>
+        <view>合计：¥{{totalSalary}}</view>
+    </view>
+    <view wx:else class="no-salary">暂无数据</view>
+</van-dialog>

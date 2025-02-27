@@ -1,0 +1,10 @@
+<wxs module="getImageUrl" src="../../wxs/getImageUrl.wxs" />
+
+<view class="container">
+  <view class="menu-list">
+  <view class="menu-item" bindtap="enterSchedulePage">
+    <image src="{{getImageUrl('time_table_icon.png')}}" class="menu-icon"/>
+    <text class="menu-text">排课助手</text>
+  </view>
+  </view>
+</view>

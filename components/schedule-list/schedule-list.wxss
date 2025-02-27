@@ -1,0 +1,135 @@
+.loading-wrap {
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.course-item-bottom {
+    display: flex;
+    align-items: center;
+    column-gap: 18rpx;
+}
+.edit-icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+.delete-icon {
+    width: 48rpx;
+    height: 48rpx;
+}
+.check-icon {
+    width: 33rpx;
+    height: 33rpx;
+    margin-left: 7rpx;
+}
+
+/* 时间轴容器 */
+.timeline-container {
+    padding: 24rpx;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32rpx;
+}
+  
+  /* 时间轴 */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12rpx;  /* 圆角边框，增加柔和感 */
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1); /* 柔和的阴影，增加深度 */
+    background-color: #f1f9f4;
+    padding: 24rpx;
+    row-gap: 24rpx;
+  }
+  
+  /* 每一天的时间轴项目 */
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  /* 时间轴左侧部分 */
+  .timeline-left {
+    width: 100rpx;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 水平居中对齐 */
+    row-gap: 12rpx;
+    margin-right: 20rpx;
+    font-size: 30rpx;
+    margin-top: 18rpx;
+  }
+  
+  /* 周几和编辑图标放在一行 */
+  .day-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30rpx;
+  }
+  
+
+  
+  /* 时间轴右侧部分（课程列表） */
+  .timeline-right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 课程列表 */
+  .course-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16rpx;
+  }
+  
+  /* 每个课程项 */
+  .course-item {
+    background-color: #e8f5e9;  /* 背景色：淡绿色 */
+    border-radius: 10rpx;
+    box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);  /* 增加阴影效果 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .course-item-top {
+      font-size: 28rpx;
+      display: flex;
+      flex-direction: column;
+      padding: 20rpx;
+      row-gap: 16rpx;
+  }
+  
+  /* 没有课程安排时的提示 */
+  .no-courses {
+    padding: 60rpx 20rpx;
+    background-color: #e8f5e9;  /* 绿色背景，柔和一点 */
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    color: #388e3c;  /* 绿色 */
+    text-align: center;
+  }
+  
+  /* 提示文字样式 */
+  .no-courses-text {
+    font-size: 28rpx;
+    color: #66bb6a;  /* 绿色 */
+    font-weight: bold;
+  }
+  
+  .swipe-cell-wrap {
+      flex: 1;
+  }
+  .custom-van-cell  {
+    background-color: transparent;
+  }
+  .operate-wrap, .operate-btn {
+      height: 100%;
+      border-radius: 0;
+  }

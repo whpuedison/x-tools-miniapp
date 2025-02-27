@@ -1,0 +1,4 @@
+module.exports = function(imagePath) {
+    var baseUrl = 'http://whpuedison.asia/images/';  // 基础 URL
+    return baseUrl + imagePath;
+}

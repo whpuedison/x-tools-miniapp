@@ -1,0 +1,35 @@
+<view class="loading-wrap" wx:if="{{loading}}">
+    <van-loading type="spinner" />
+</view>
+<view class="container">
+    <view class="week-table">
+        <view class="week-item" wx:for="{{list}}" wx:for-item="outerItem" wx:key="index">
+            <view class="week-item-left">
+                <text>{{outerItem.weekDate}}</text>
+                <text>{{outerItem.weekDay}}</text>
+            </view>
+            <view class="week-item-right">
+                <view 
+                    wx:for="{{outerItem.list}}" 
+                    wx:key="index"
+                    class="course-item"
+                    style="background-color: {{locationColor[item.location]}};width:{{item.width}};left:{{item.left}};"
+                    data-item="{{item}}" 
+                    bindtap="onViewDetail" 
+                />
+            </view>
+        </view>
+        <view class="x-axis">
+            <view class="x-axis-item" wx:for="{{xAxisData}}" wx:key="index">
+                <text class="x-axis-value">{{item}}</text>
+                <view class="x-axis-line" style="height:{{xAxisLineHeight}};top:{{xAxisLineTop}}" />
+            </view>
+        </view>
+    </view>
+    <view class="color-desc-wrap">
+        <view class="color-desc-item"  wx:for="{{locationList}}" wx:key="index">
+            <view class="color-block" style="background-color: {{item.color}};"></view>
+            <text class="location-text">{{item.description}}</text>
+        </view>
+    </view>
+</view>

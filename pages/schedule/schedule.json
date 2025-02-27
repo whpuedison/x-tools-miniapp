@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "排课助手",
+  "usingComponents": {
+      "schedule-list": "../../components/schedule-list/schedule-list",
+      "schedule-week": "../../components/schedule-week/schedule-week",
+      "van-tab": "/miniprogram_npm/@vant/weapp/tab/index",
+      "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index",
+      "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+      "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+      "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+      "van-datetime-picker": "/miniprogram_npm/@vant/weapp/datetime-picker/index",
+      "van-calendar": "/miniprogram_npm/@vant/weapp/calendar/index",
+      "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index"
+  }
+}

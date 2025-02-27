@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "schedule-form-pop": "../../components/schedule-form-pop/schedule-form-pop",
+    "van-loading": "/miniprogram_npm/@vant/weapp/loading/index",
+    "van-swipe-cell": "/miniprogram_npm/@vant/weapp/swipe-cell/index",
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-button": "/miniprogram_npm/@vant/weapp/button/index"
+  }
+}

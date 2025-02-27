@@ -1,0 +1,35 @@
+/* index.wxss */
+.container {
+    display: flex;
+    flex-direction: column;  /* 垂直布局 */
+    align-items: center;  /* 水平居中 */
+    justify-content: flex-start; 
+    height: 100vh; /* 填满整个视口 */
+    background-color: #f4f4f4;  /* 背景色 */
+    padding: 24rpx;
+}
+.menu-list {
+    background-color: #ffffff;  /* 白色背景 */
+    border-radius: 16rpx; /* 圆角效果 */
+    box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.1);  /* 容器阴影 */
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    row-gap: 12rpx;
+}
+.menu-icon {
+    width: 100rpx; /* 调整图标大小 */
+    height: 100rpx;
+}
+.menu-text {
+    font-size: 28rpx;
+    color: #333333;
+    text-align: center;
+}

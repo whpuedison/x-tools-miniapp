@@ -1,0 +1,88 @@
+.container {
+    padding: 24rpx;
+}
+.week-table {
+    padding: 24rpx;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12rpx;  /* 圆角边框，增加柔和感 */
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1); /* 柔和的阴影，增加深度 */
+    background-color: #f1f9f4;
+}
+.week-item {
+    display: flex;
+    align-items: flex-start;
+}
+.week-item-left {
+    width: 100rpx;
+    height: 100rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 6rpx;
+    font-size: 28rpx;
+}
+.week-item-right {
+    flex: 1;
+    position: relative;
+    border: 3rpx solid #ddd;
+    border-bottom: none;
+    height: 100rpx;
+}
+.course-item {
+    display: inline-block;
+    height: 68rpx;
+    position: absolute;
+    border-radius: 8rpx;
+    top: 16rpx;
+    z-index: 2;
+}
+.color-desc-wrap {
+    margin-top: 48rpx;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 24rpx;
+}
+.color-desc-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 8rpx;
+    flex-basis: 33.33%;
+}
+.color-block {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 8rpx;
+}
+.location-text {
+    white-space: nowrap;
+}
+.x-axis {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12rpx 0;
+    margin-left: 100rpx;
+    border-top: 3rpx solid #ddd;
+}
+.x-axis-item {
+    flex: 1;
+    position: relative;
+    text-align: left;
+}
+.x-axis-value {
+    position: relative;
+    font-size: 32rpx;
+    left: -16rpx;
+}
+.x-axis-line {
+    display: inline-block;
+    width: 3rpx;
+    background-color: #eee;
+    position: absolute;
+    left: 0;
+}

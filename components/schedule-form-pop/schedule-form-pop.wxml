@@ -1,0 +1,130 @@
+<van-popup show="{{ show }}" round position="bottom" bind:close="onClose">
+  <view class="form-container">
+    <!-- 课程名称输入 -->
+    <van-field 
+        label="课程名称" 
+        placeholder="请输入课程名称"
+        value="{{ courseName }}" 
+        required 
+        bind:input="onCourseNameChange"
+    />
+
+    <!-- 课程类型选择 -->
+    <van-cell 
+        title-class="{{courseType.description ? 'title-class' : ''}}" 
+        value-class="value-class" 
+        title="课程类型" 
+        value="{{ courseType.description}}" 
+        is-link 
+        bind:click="onCourseTypePickerOpen" 
+        required 
+    />
+
+     <van-cell 
+        title-class="{{courseDate ? 'title-class' : ''}}" 
+        value-class="value-class" 
+        title="课程日期" 
+        value="{{ courseDate }}" 
+        is-link 
+        bind:click="onCourseDatePickerOpen" 
+        required 
+    />
+    
+    <!-- 课程开始时间选择 -->
+    <van-cell 
+        title-class="{{startTime ? 'title-class' : ''}}" 
+        value-class="value-class" 
+        title="开始时间" 
+        value="{{ startTime }}" 
+        is-link 
+        bind:click="onStartTimePickerOpen" 
+        required 
+    />
+    
+    <!-- 课程结束时间选择 -->
+    <van-cell 
+        title-class="{{endTime ? 'title-class' : ''}}" 
+        value-class="value-class" 
+        title="结束时间" 
+        value="{{ endTime }}" 
+        is-link 
+        bind:click="onEndTimePickerOpen" 
+        required 
+    />
+    
+    <!-- 上课地点选择 -->
+    <van-cell 
+        title-class="{{location ? 'title-class' : ''}}" 
+        value-class="value-class" 
+        title="上课地点" 
+        value="{{ location }}" 
+        is-link 
+        bind:click="onLocationPickerOpen" 
+        required 
+    />
+    
+    <view class="error-message" wx:if="{{ errorMessage }}">
+      <text>{{ errorMessage }}</text>
+    </view>
+    
+    <van-button type="primary" class="save-btn" round block bind:click="onSave">保存</van-button>
+  </view>
+
+  <!-- 课程开始时间选择器弹窗 -->
+  <van-popup show="{{ showStartTimePicker }}" position="bottom" bind:close="onCloseStartTimePicker">
+    <van-datetime-picker
+      type="time"
+      min-hour="10"
+      max-hour="20"
+      value="{{ startTime }}"
+      bind:cancel="onCloseStartTimePicker"
+      bind:confirm="onStartTimeChange"
+    />
+  </van-popup>
+
+   <!-- 课程类型选择器弹窗 -->
+   <van-popup show="{{ showCourseTypePicker }}" position="bottom" bind:close="onCloseCourseTypePicker">
+    <van-picker
+      show-toolbar="{{true}}"
+      columns="{{ courseTypeList }}"
+      value-key="description"
+      value="{{ courseType.id }}"
+      bind:cancel="onCloseCourseTypePicker"
+      bind:confirm="onCourseTypeChange"
+    />
+  </van-popup>
+
+  <!-- 课程结束时间选择器弹窗 -->
+  <van-popup show="{{ showEndTimePicker }}" position="bottom" bind:close="onCloseEndTimePicker">
+    <van-datetime-picker
+      type="time"
+      min-hour="10"
+      max-hour="20"
+      value="{{ endTime }}"
+      bind:cancel="onCloseEndTimePicker"
+      bind:confirm="onEndTimeChange"
+    />
+  </van-popup>
+
+  <!-- 地点选择器弹窗 -->
+  <van-popup show="{{ showLocationPicker }}" position="bottom" bind:close="onCloseLocationPicker">
+    <van-picker
+      show-toolbar="{{true}}"
+      columns="{{ locationList }}"
+      value-key="description"
+      value="{{ location }}"
+      bind:cancel="onCloseLocationPicker"
+      bind:confirm="onLocationChange"
+    />
+  </van-popup>
+
+  <!-- 日历弹窗 -->
+  <van-calendar 
+    color="#07c160"
+    min-date="{{minDate}}"
+    show="{{ showCourseDatePicker }}" 
+    bind:close="onCloseCourseDatePicker" 
+    bind:confirm="onCourseDateChange"  
+  />
+
+</van-popup>

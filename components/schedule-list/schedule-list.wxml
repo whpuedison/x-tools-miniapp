@@ -1,0 +1,72 @@
+<wxs module="getImageUrl" src="../../wxs/getImageUrl.wxs" />
+
+<view class="loading-wrap" wx:if="{{loading}}">
+    <van-loading type="spinner" />
+</view>
+<view wx:else class="timeline-container">
+        <!-- 如果没有课程安排 -->
+        <view wx:if="{{list.length === 0}}" class="no-courses">
+                <text class="no-courses-text">暂无课程</text>
+        </view>
+        <!-- 时间轴 -->
+        <view wx:else class="timeline">
+            <view class="timeline-item" wx:for="{{list}}" wx:for-item="outerItem" wx:key="index">
+            <!-- 时间轴左边 -->
+            <view class="timeline-left">
+                <text>{{outerItem.courseDate}}</text>
+                <text>{{outerItem.weekDay}}</text>
+            </view>
+
+            <!-- 时间轴右边 -->
+            <view class="timeline-right">
+                <view class="course-list">
+                <!-- 如果有课程，展示课程 -->
+                <view 
+                    wx:for="{{outerItem.list}}" 
+                    wx:key="index" 
+                    class="course-item"
+                    style="background-color: {{locationColor[item.location]}}"
+                >
+                    <van-swipe-cell class="swipe-cell-wrap" right-width="{{ 180 }}">
+                        <view class="course-item-top"> 
+                            <view>{{item.courseName}}</view>
+                            <view>{{item.location}}  {{item.startTime}}~{{item.endTime}}</view>
+                        </view>
+                        <view slot="right" class="operate-wrap">
+                            <van-button 
+                                custom-class="operate-btn" 
+                                type="info"
+                                data-item="{{item}}" 
+                                bindtap="onCopyCourse" 
+                            >复制</van-button>
+                            <van-button 
+                                custom-class="operate-btn" 
+                                type="primary"
+                                data-item="{{item}}" 
+                                bindtap="onEditCourse" 
+                            >编辑</van-button>
+                            <van-button
+                                custom-class="operate-btn" 
+                                type="danger"
+                                data-id="{{item.id}}" 
+                                bindtap="onDeleteCourse" 
+                            >删除</van-button>
+                        </view>
+                    </van-swipe-cell>
+                </view>
+                </view>
+            </view>
+            </view>
+        </view>
+        <van-button wx:if="{{showAddBtn}}" type="primary" round block bindtap="onAddCourse">添加</van-button>
+</view>
+
+<schedule-form-pop 
+    show="{{ showFormPop }}" 
+    schedule="{{ currentCourse }}"
+    bind:refresh="refreshList" 
+    bind:cancel="onCancelEdit" 
+    bind:close="onCloseFormPop" 
+    locationList="{{locationList}}"
+    courseTypeList="{{courseTypeList}}"
+/>

@@ -1,0 +1,21 @@
+.cur-date-descc {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 24rpx;
+}
+.total-salary {
+    color: #07c160;
+}
+.salary-list {
+    display: flex;
+    flex-direction: column;
+    padding: 40rpx;
+    justify-content: center;
+    row-gap: 24rpx;
+    align-items: center;
+}
+.no-salary {
+    padding: 60rpx 20rpx;
+    text-align: center;
+}
