@@ -185,7 +185,7 @@ Page({
         })
     },
 
-    onChangeCurDate: function (e) {
+    onChangeCustomDate: function (e) {
         this.asyncCustomDate(e.detail)
         this.onCustomDatePickerClose()
     },
