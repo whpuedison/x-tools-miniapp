@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "课程提纲",
+    "usingComponents": {
+      "van-loading": "@vant/weapp/loading/index"
+    }
+  }

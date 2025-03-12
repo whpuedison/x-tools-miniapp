@@ -26,13 +26,22 @@
                     wx:key="index" 
                     class="course-item"
                     style="background-color: {{locationColor[item.location]}}"
+                    data-item="{{item}}"
+                    bindtap="handleDoubleTap"
                 >
-                    <van-swipe-cell class="swipe-cell-wrap" right-width="{{ 180 }}">
+                    <van-swipe-cell class="swipe-cell-wrap" right-width="{{ item.courseType.id === 2 ? 240 : 180 }}">
                         <view class="course-item-top"> 
                             <view>{{item.courseName}}</view>
                             <view>{{item.location}}  {{item.startTime}}~{{item.endTime}}</view>
                         </view>
                         <view slot="right" class="operate-wrap">
+                            <van-button
+                                wx-if="{{item.courseType.id === 2}}"
+                                custom-class="operate-btn" 
+                                type="warning"
+                                data-item="{{item}}" 
+                                bindtap="onViewOutline" 
+                            >提纲</van-button>
                             <van-button 
                                 custom-class="operate-btn" 
                                 type="info"

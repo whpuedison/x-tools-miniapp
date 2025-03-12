@@ -38,12 +38,23 @@ Component({
   data: {
     showFormPop: false,
     currentCourse: null,
+    lastTapTime: 0,
+    lastTapId: null,
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+     onViewOutline(e) {
+        const { item } = e.currentTarget.dataset;
+        const { courseName, courseType } = item;
+        
+        wx.navigateTo({
+            url: `/pages/course-outline/course-outline?courseName=${courseName}&courseType=${courseType.description}`
+        });
+    },
+    
     // 点击新增按钮，显示表单
     onAddCourse: function () {
         this.setData({

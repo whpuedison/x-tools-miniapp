@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/schedule/schedule"
+    "pages/schedule/schedule",
+    "pages/course-outline/course-outline"
   ],
   "window": {
     "navigationBarTextStyle": "black",

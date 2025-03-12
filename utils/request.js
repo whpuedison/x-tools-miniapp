@@ -16,6 +16,7 @@ function request(method, url, data = {}, headers = {}) {
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${baseUrl}${url}`,
+      timeout: 120000,
       method,
       data,
       header: {

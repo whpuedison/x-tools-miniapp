@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="header">
+    <view class="course-info">
+      <text class="course-name">{{courseName}}</text>
+      <text class="course-type">{{courseType}}</text>
+    </view>
+  </view>
+
+  <view class="content">
+    <view wx:if="{{loading}}" class="loading">
+      <van-loading type="spinner" />
+    </view>
+    
+    <view wx:else>
+      <view wx:if="{{outline}}" class="outline-content">
+        <rich-text nodes="{{outline}}"></rich-text>
+      </view>
+      <view wx:else class="empty">
+        <text>暂无课程提纲</text>
+      </view>
+    </view>
+  </view>
+</view>
