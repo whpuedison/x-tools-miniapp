@@ -78,6 +78,11 @@ Component({
                 // 用户点击了确认
                 $post('/miniapp/schedule/deleteSchedule', { scheduleId })
                 .then(() => {
+                  wx.showToast({
+                    title: '删除成功',
+                    icon: 'success',
+                    duration: 2000
+                  })
                     this.refreshList()
                 })
             }
@@ -96,7 +101,7 @@ Component({
 
 
     // 编辑课程
-    onEditCourse: function(e) {
+    onEditCourse: function(e) {      
             const { item } = e.currentTarget.dataset;
             this.setData({
                 showFormPop: true,

@@ -61,7 +61,7 @@
   show="{{ showCustomDatePicker }}"
   type="range"
   bind:close="onCustomDatePickerClose"
-  bind:confirm="onChangeCurDate"
+  bind:confirm="onChangeCustomDate"
 />
 
 <van-dialog
