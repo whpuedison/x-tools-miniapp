@@ -36,7 +36,7 @@
                         </view>
                         <view slot="right" class="operate-wrap">
                             <van-button
-                                wx-if="{{item.courseType.id === 2}}"
+                                wx:if="{{item.courseType.id === 2}}"
                                 custom-class="operate-btn" 
                                 type="warning"
                                 data-item="{{item}}" 
